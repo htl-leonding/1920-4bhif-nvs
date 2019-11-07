@@ -1,15 +1,13 @@
 package at.htl.person.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Person {
 
+    @Transient
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
