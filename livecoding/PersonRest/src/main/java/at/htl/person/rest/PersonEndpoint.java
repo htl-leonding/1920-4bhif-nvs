@@ -8,6 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("person")
 public class PersonEndpoint {
@@ -16,8 +17,10 @@ public class PersonEndpoint {
     EntityManager em;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String findFirstPerson() {
-        return em.find(Person.class, 1L).toString();
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Person> findAll() {
+        return em
+                .createNamedQuery("Person.findAll",Person.class)
+                .getResultList();
     }
 }

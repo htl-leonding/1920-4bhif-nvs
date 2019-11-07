@@ -10,6 +10,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Transient;
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.Month;
 
 @ApplicationScoped
 public class InitBean {
@@ -23,6 +25,8 @@ public class InitBean {
 
         Person franz = new Person("Franz");
         em.persist(franz);
+        em.persist(new Person("Susi", LocalDate.of(2001, Month.SEPTEMBER, 3)));
+        em.persist(new Person("Mimi", LocalDate.of(2001, Month.MAY, 31)));
 
     }
 }

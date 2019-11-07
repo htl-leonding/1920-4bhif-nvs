@@ -5,6 +5,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Entity
+@NamedQuery(
+        name = "Person.findAll",
+        query = "select p from Person p"
+)
+@NamedQuery(
+        name = "Person.findByName",
+        query = "select p from Person p where p.name = :NAME"
+)
 public class Person {
 
     @Transient
