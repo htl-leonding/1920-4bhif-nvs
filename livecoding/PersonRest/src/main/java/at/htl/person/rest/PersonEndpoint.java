@@ -16,8 +16,8 @@ public class PersonEndpoint {
     EntityManager em;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Person findFirstPerson() {
-        return em.find(Person.class, 1L);
+    @Produces(MediaType.TEXT_PLAIN)
+    public String findFirstPerson() {
+        return em.find(Person.class, 1L).toString();
     }
 }
