@@ -1,0 +1,18 @@
+GET http://localhost:8080/person/api/person?name=Susi
+
+###
+
+GET http://localhost:8080/person/api/person/demo
+
+###
+
+POST http://localhost:8080/person/api/person
+Content-Type: application/json
+
+  {
+    "dob": "1999-08-21",
+    "name": "Haris"
+  }
+
+###
+
