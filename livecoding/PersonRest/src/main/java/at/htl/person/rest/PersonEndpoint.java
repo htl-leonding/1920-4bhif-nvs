@@ -14,11 +14,14 @@ import java.util.List;
 @Path("person")
 public class PersonEndpoint {
 
+    public PersonEndpoint() {
+    }
+
     @PersistenceContext
     EntityManager em;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public List<Person> findAll() {
         return em
                 .createNamedQuery("Person.findAll",Person.class)
@@ -36,8 +39,16 @@ public class PersonEndpoint {
 
     @GET
     @Path("demo")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response returnResponse() {
-        return Response.accepted().build();
+        List<Person> persons = em
+                .createNamedQuery("Person.findAll",Person.class)
+                .getResultList();
+        return Response
+                .status(Response.Status.OK)
+                .header("chiara","christoph")
+                .entity(persons)
+                .build();
     }
 
     @POST

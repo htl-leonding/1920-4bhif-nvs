@@ -16,6 +16,9 @@ import java.time.Month;
 @ApplicationScoped
 public class InitBean {
 
+    public InitBean() {
+    }
+
     @PersistenceContext
     EntityManager em;
 

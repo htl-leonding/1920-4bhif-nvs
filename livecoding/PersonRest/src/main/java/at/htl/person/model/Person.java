@@ -1,6 +1,7 @@
 package at.htl.person.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -15,6 +16,7 @@ import java.time.format.DateTimeFormatter;
                 query = "select p from Person p where p.name = :NAME"
         )
 })
+@XmlRootElement
 public class Person {
 
     @Transient
