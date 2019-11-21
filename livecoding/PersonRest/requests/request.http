@@ -29,3 +29,27 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:8080/person/api/person
+Content-Type: application/json
+
+[
+{
+  "dob": "2001-10-07",
+  "name": "Chiara"
+},
+  {
+  "dob": "2002-03-23",
+  "name": "Christoph"
+}
+]
+
+### dob fehlt im Json Object
+
+POST http://localhost:8080/person/api/person/x
+Content-Type: application/json
+
+{
+  "name": "Haris"
+}
+
+###
