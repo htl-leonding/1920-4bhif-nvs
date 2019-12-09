@@ -32,7 +32,8 @@ public class InitBean {
 
 
     private void readCsv(String fileName) {
-        URL url = Thread.currentThread().getContextClassLoader()
+        // tag::readcsv[]
+        URL url = Thread.currentThread().getContextClassLoader() // <1>
                 .getResource(fileName);
         try (Stream<String> stream = Files.lines(Paths.get(url.getPath())
                 , StandardCharsets.UTF_8)) {
@@ -45,6 +46,7 @@ public class InitBean {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // end::readcsv[]
     }
 
 }

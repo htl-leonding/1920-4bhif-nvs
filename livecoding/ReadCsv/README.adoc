@@ -1,0 +1,52 @@
+= Übung ReadCsv
+:toc:
+:sectnums:
+:icons: font
+
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+++++
+
+
+== XXY
+=== XXC
+[source,java]
+----
+include::src/main/java/at/htl/readcsv/business/InitBean.java[tags=readcsv]
+----
+<1> Das ist ...
+
+[source,java]
+----
+public static void main(...)
+----
+
+[plantuml,CLD,png]
+----
+@startuml
+class Person{
+   Long id
+   String name
+   String house
+   String city
+   getName()
+}
+class Warrior{
+   String weapon
+}
+Person <|-right- Warrior
+@enduml
+----
+
+IMPORTANT: Des is wichtig
+
+.Mein Use Case Diagram
+[plantuml,UCD,png]
+----
+@startuml
+:User:
+rectangle MyPersonMgmtSystem {
+  User -right- (Adresse eintragen)
+}
+@enduml
+----
