@@ -20,7 +20,7 @@ public class PersonEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
         Person person = personDao
-                .find("name","Christian")
+                .find("name","Christiane")
                 .firstResult();
         return Response
                 .ok(person)
